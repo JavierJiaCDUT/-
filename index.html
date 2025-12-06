@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fix-Beeper Typewriter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=VT323&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'typewriter': ['"Courier Prime"', 'monospace'],
+              'terminal': ['"VT323"', 'monospace'],
+            },
+            colors: {
+              'retro-green': '#33ff00',
+              'retro-bg': '#1a1a1a',
+              'paper': '#fdfbf7',
+            },
+            animation: {
+              'cursor-blink': 'blink 1s step-end infinite',
+              'slide-out': 'slideOut 0.5s ease-out forwards',
+            },
+            keyframes: {
+              blink: {
+                '0%, 100%': { opacity: '1' },
+                '50%': { opacity: '0' },
+              },
+              slideOut: {
+                '0%': { transform: 'translateY(-20px) scale(0.9)', opacity: '0' },
+                '100%': { transform: 'translateY(0) scale(1)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden; /* Prevent scroll on the desk */
+        background-color: #1a1a1a;
+      }
+      /* Custom Scrollbar for the terminal */
+      .terminal-scroll::-webkit-scrollbar {
+        width: 8px;
+      }
+      .terminal-scroll::-webkit-scrollbar-track {
+        background: #111;
+      }
+      .terminal-scroll::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 4px;
+      }
+      .terminal-scroll::-webkit-scrollbar-thumb:hover {
+        background: #444;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
